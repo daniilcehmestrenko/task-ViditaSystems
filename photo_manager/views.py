@@ -11,7 +11,6 @@ class PhotoListCreateAPIView(ListCreateAPIView):
 
     def get_queryset(self):
         metadata = self.request.query_params.dict()
-        print(metadata)
         if metadata:
             queryset = Photo.objects.filter(
                     metadata__contains=metadata
